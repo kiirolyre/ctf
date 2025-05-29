@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Phone Call 📞</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #phone-screen {
+      border: 2px solid #00FF00;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00FF00;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #000;
+      color: #00FF00;
+      border: 1px solid #00FF00;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00FF00;
+      color: #000;
+    }
+    #message {
+      margin: 20px 0;
+      font-size: 1.2em;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="phone-screen">
+    <h1>📞 Hacker Phone</h1>
+    <button onclick="updateMessage('hello')">Call</button>
+    <div id="message"></div>
+    <div id="options"></div>
+  </div>
+  <script>
+    function updateMessage(option) {
+      let message = '';
+      let optionsHTML = '';
+
+      if (option === 'hello') {
+        message = 'Hello!! How are you?';
+        optionsHTML = `
+          <button onclick=\"updateMessage('good')\">Good</button>
+          <button onclick=\"updateMessage('bad')\">Bad</button>
+        `;
+      } else if (option === 'good') {
+        message = 'That’s amazing! What are you up to?';
+        optionsHTML = `
+          <button onclick=\"updateMessage('work')\">Working</button>
+          <button onclick=\"updateMessage('relax')\">Relaxing</button>
+        `;
+      } else if (option === 'bad') {
+        message = 'Oh, I’m so sorry! Want to talk about it?';
+        optionsHTML = `
+          <button onclick=\"updateMessage('yesTalk')\">Yes</button>
+          <button onclick=\"updateMessage('noTalk')\">No</button>
+        `;
+      } else if (option === 'work') {
+        message = 'Stay focused, you’re doing great!';
+        optionsHTML = `
+          <button onclick=\"updateMessage('done')\">Hang up</button>
+        `;
+      } else if (option === 'relax') {
+        message = 'Good for you! Self-care is important.';
+        optionsHTML = `
+          <button onclick=\"updateMessage('done')\">Hang up</button>
+        `;
+      } else if (option === 'yesTalk') {
+        message = 'I’m all ears. Tell me what’s on your mind.';
+        optionsHTML = `
+          <button onclick=\"updateMessage('done')\">Thanks</button>
+        `;
+      } else if (option === 'noTalk') {
+        message = 'Alright, take care of yourself.';
+        optionsHTML = `
+          <button onclick=\"updateMessage('done')\">Hang up</button>
+        `;
+      } else if (option === 'done') {
+        message = 'Goodbye!';
+        optionsHTML = '';
+      }
+
+      document.getElementById('message').innerHTML = message;
+      document.getElementById('options').innerHTML = optionsHTML;
+    }
+  </script>
+</body>
+</html>
