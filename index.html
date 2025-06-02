@@ -58,35 +58,35 @@
       let optionsHTML = '';
 
       if (option === 'hello') {
-        message = 'Hello!! How are you?';
+        message = 'Yo!! How are you?';
         optionsHTML = `
           <button onclick=\"updateMessage('good')\">Good</button>
           <button onclick=\"updateMessage('bad')\">Bad</button>
         `;
       } else if (option === 'good') {
-        message = 'That’s amazing! What are you up to?';
+        message = 'That’s v good! What are you up to?';
         optionsHTML = `
           <button onclick=\"updateMessage('work')\">Working</button>
           <button onclick=\"updateMessage('relax')\">Relaxing</button>
         `;
       } else if (option === 'bad') {
-        message = 'Oh, I’m so sorry! Want to talk about it?';
+        message = 'Oh, I’m so sorry :(( Want to talk about it?';
         optionsHTML = `
           <button onclick=\"updateMessage('yesTalk')\">Yes</button>
           <button onclick=\"updateMessage('noTalk')\">No</button>
         `;
       } else if (option === 'work') {
-        message = 'Stay focused, you’re doing great!';
+        message = 'Stay focused, ur doing great!<3';
         optionsHTML = `
           <button onclick=\"updateMessage('done')\">Hang up</button>
         `;
       } else if (option === 'relax') {
-        message = 'Good for you! Self-care is important.';
+        message = 'That's what I'm doing too hehe';
         optionsHTML = `
           <button onclick=\"updateMessage('done')\">Hang up</button>
         `;
       } else if (option === 'yesTalk') {
-        message = 'I’m all ears. Tell me what’s on your mind.';
+        message = 'OK, let's talk :D';
         optionsHTML = `
           <button onclick=\"updateMessage('done')\">Thanks</button>
         `;
